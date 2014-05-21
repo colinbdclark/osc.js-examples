@@ -2,6 +2,9 @@
 
     "use strict";
 
+    // A nice little FM synth.
+    // Incoming OSC messages control the frequency and amplitude
+    // of both the modulator and the carrier oscillators.
     var synth = flock.synth({
         synthDef: {
             id: "carrier",
@@ -62,19 +65,38 @@
         synth.set(transformSpec.inputPath, transformed);
     };
 
-    // Instantiate a new OSC Serial Port.
-    var port = new osc.chrome.SerialPort({
-        devicePath: "/dev/cu.usbmodem22131"
+    // Enumerate all the serial port devices and render them to the dropdown.
+    chrome.serial.getDevices(function (ports) {
+        var portSelector = $("#portSelector");
+
+        portSelector.empty();
+        ports.forEach(function (port) {
+            var label = port.displayName || port.path;
+            var option = $("<option value=" + "'" + port.path + "'>" + label + "</option>");
+            portSelector.append(option);
+        });
+
+        portSelector.change(function () {
+            var selectedDevice = $("#portSelector").val();
+            connectToSerialPort(selectedDevice);
+        })
     });
 
-    // Listen for the message event and map the OSC message to the synth.
-    port.on("message", function (oscMessage) {
-        mapOSCToSynth(oscMessage, synth, synthValueMap);
-        $("#messageArea").text(JSON.stringify(oscMessage));
-    });
+    var connectToSerialPort = function (devicePath) {
+        // Instantiate a new OSC Serial Port.
+        var port = new osc.chrome.SerialPort({
+            devicePath: "/dev/cu.usbmodem22131"
+        });
 
-    // Open the port.
-    port.open();
+        // Listen for the message event and map the OSC message to the synth.
+        port.on("message", function (oscMessage) {
+            mapOSCToSynth(oscMessage, synth, synthValueMap);
+            $("#message").text(JSON.stringify(oscMessage));
+        });
+
+        // Open the port.
+        port.open();
+    };
 
     // Start playing the synth.
     flock.init();

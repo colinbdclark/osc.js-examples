@@ -1,4 +1,39 @@
-<div id="messageArea"></div>
+<style>
+    #toolbar {
+        padding: 0.5em;
+    }
+
+    #messageArea {
+        color: #fff;
+        background-color: #aaa;
+        border-radius: 10px;
+        padding-left: 0.75em;
+        padding-top: 0.1em;
+        height: 75%;
+        width: 98%;
+    }
+
+    #messageLabel {
+        font-weight: bold;
+    }
+
+    #message {
+        font-family: monospace;
+        font-size: 148%;
+    }
+</style>
+
+<div id="toolbar">
+    <label for="portSelector">Serial port</label>:
+    <select id="portSelector" size="1">
+    </select>
+</div>
+
+<div id="messageArea">
+    <p id="messageLabel">OSC Message:</p>
+    <p id="message"></p>
+</div>
+
 <script src="../bower_components/flocking/dist/flocking-all.min.js"></script>
 <script src="../bower_components/osc.js/src/osc.js"></script>
 <script src="../bower_components/slip.js/src/slip.js"></script>
