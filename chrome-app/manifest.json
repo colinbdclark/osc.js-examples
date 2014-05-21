@@ -1,0 +1,16 @@
+{
+    "name": "OSC.js Chrome App Demo",
+    "version": "1",
+    "manifest_version": 2,
+    "permissions": [
+        "serial"
+    ],
+    "minimum_chrome_version": "23",
+    "icons": {},
+    "app": {
+        "background": {
+            "scripts": ["js/launch.js"],
+            "transient": true
+        }
+    }
+}
