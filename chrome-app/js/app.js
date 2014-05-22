@@ -108,7 +108,7 @@
     var connectToSerialPort = function (devicePath) {
         // Instantiate a new OSC Serial Port.
         var serialPort = new osc.chrome.SerialPort({
-            devicePath: "/dev/cu.usbmodem22131"
+            devicePath: devicePath
         });
 
         // Listen for the message event and map the OSC message to the synth.
@@ -132,7 +132,7 @@
     });
 
     // Map Lemur bundled messages to the synth.
-    udpPort.on("bundle", function (oscPacket) {
+    udpPort.on("osc", function (oscPacket) {
         $("#message").text(fluid.prettyPrintJSON(oscPacket));
 
         oscPacket.packets.forEach(function (oscMessage) {
