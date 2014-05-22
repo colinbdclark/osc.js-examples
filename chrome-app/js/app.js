@@ -2,85 +2,6 @@
 
     "use strict";
 
-    // A nice little FM synth.
-    // Incoming OSC messages control the frequency and amplitude
-    // of both the modulator and the carrier oscillators.
-    var synth = flock.synth({
-        synthDef: {
-            id: "carrier",
-            ugen: "flock.ugen.sin",
-            freq: {
-                ugen: "flock.ugen.value",
-                rate: "audio",
-                value: 400,
-                add: {
-                    id: "modulator",
-                    ugen: "flock.ugen.sin",
-                    freq: {
-                        ugen: "flock.ugen.value",
-                        rate: "audio",
-                        value: 124
-                    },
-                    mul: 100
-                }
-            },
-            mul: 0.3
-        }
-    });
-
-    var freqTransform = function (value) {
-        return (value * 6000) + 60;
-    };
-
-    var identityTransform = function (value) {
-        return value;
-    };
-
-    var carrierSpec = {
-        freq: {
-            inputPath: "carrier.freq.value",
-            transform: freqTransform
-        },
-        mul: {
-            inputPath: "carrier.mul",
-            transform: identityTransform
-        }
-    };
-
-    var modulatorSpec = {
-        freq: {
-            inputPath: "modulator.freq.value",
-            transform: freqTransform
-        },
-        mul: {
-            inputPath: "modulator.mul",
-            transform: freqTransform
-        }
-    };
-
-    var synthValueMap = {
-        "/knobs/0": carrierSpec.freq,
-        "/fader1/out": carrierSpec.freq,
-
-        "/knobs/1": carrierSpec.mul,
-        "/fader2/out": carrierSpec.mul,
-
-        "/knobs/2": modulatorSpec.freq,
-        "/fader3/out": modulatorSpec.freq,
-
-        "/knobs/3": modulatorSpec.mul,
-        "/fader4/out": modulatorSpec.mul
-    };
-
-    var mapOSCToSynth = function (oscMessage, synth, valueMap) {
-        var address = oscMessage.address;
-        var value = oscMessage.args[0];
-        var transformSpec = valueMap[address];
-
-        var transformed = transformSpec.transform(value);
-        synth.set(transformSpec.inputPath, transformed);
-    };
-
     // Enumerate all the serial port devices and render them to the dropdown.
     chrome.serial.getDevices(function (ports) {
         var portSelector = $("#portSelector");
@@ -136,7 +57,7 @@
         $("#message").text(fluid.prettyPrintJSON(oscPacket));
 
         oscPacket.packets.forEach(function (oscMessage) {
-            mapOSCToSynth(oscMessage, synth, synthValueMap);
+            example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
         });
     });
 
@@ -148,5 +69,5 @@
 
     // Start playing the synth.
     flock.init();
-    synth.play();
+    example.synth.play();
 }());

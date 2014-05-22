@@ -1,12 +1,30 @@
-var osc = require("osc");
+var osc = require("osc"),
+    flock = require("flocking"),
+    example = require("../chrome-app/js/example-synth.js");
 
-var rawMessage = new Buffer(20);
-rawMessage.write("/cat", 0, 4, "ascii");
-rawMessage.writeUInt32BE(0, 8);
-rawMessage.write(",s", 8, 2, "ascii");
-rawMessage.writeUInt32BE(0, 10);
-rawMessage.write("meow", 12, 4, "ascii");
-rawMessage.writeUInt32BE(0, 16);
+// Also bind to a UDP socket.
+var udpPort = new osc.UDPPort({
+    localAddress: "0.0.0.0",
+    localPort: 57121
+});
 
-var message = osc.readMessage(rawMessage);
-console.log(JSON.stringify(message));
+udpPort.on("ready", function () {
+    console.log("Listening for UDP on port " + udpPort.options.localPort);
+});
+
+udpPort.on("osc", function (oscPacket) {
+    //console.log(oscPacket);
+    oscPacket.packets.forEach(function (oscMessage) {
+        example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
+    });
+});
+
+udpPort.on("error", function (err) {
+    console.log(err);
+});
+
+udpPort.open();
+
+// Start playing the synth.
+flock.init();
+example.synth.play();
