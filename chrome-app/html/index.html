@@ -1,6 +1,6 @@
 <style>
     #toolbar {
-        padding: 0.5em;
+        padding: 0.5em 0.5em 0.75em 0.5em;
     }
 
     #messageArea {
@@ -9,8 +9,15 @@
         border-radius: 10px;
         padding-left: 0.75em;
         padding-top: 0.1em;
-        height: 75%;
+        height: 93%;
         width: 98%;
+    }
+
+    #udpStatus {
+        float: right;
+        font-size: 75%;
+        font-style: italic;
+        padding-top: 0.5em;
     }
 
     #messageLabel {
@@ -27,13 +34,21 @@
     <label for="portSelector">Serial port</label>:
     <select id="portSelector" size="1">
     </select>
+    <span id="udpStatus"></span>
 </div>
 
 <div id="messageArea">
     <p id="messageLabel">OSC Message:</p>
-    <p id="message"></p>
+    <pre id="message"></pre>
 </div>
 
 <script src="../bower_components/flocking/dist/flocking-all.min.js"></script>
-<script src="../bower_components/osc.js/dist/osc-chromeapp.min.js"></script>
+
+<script src="../bower_components/osc.js/src/osc.js"></script>
+<script src="../bower_components/slip.js/src/slip.js"></script>
+<script src="../bower_components/eventEmitter/EventEmitter.js"></script>
+<script src="../bower_components/osc.js/src/osc-transports.js"></script>
+<script src="../bower_components/osc.js/src/platforms/chromeapp-transports.js"></script>
+
+<!--<script src="../bower_components/osc.js/dist/osc-chromeapp.min.js"></script>-->
 <script src="../js/app.js"></script>

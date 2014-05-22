@@ -36,24 +36,40 @@
         return value;
     };
 
-    var synthValueMap = {
-        "/knobs/0": {
+    var carrierSpec = {
+        freq: {
             inputPath: "carrier.freq.value",
             transform: freqTransform
         },
-        "/knobs/1": {
+        mul: {
             inputPath: "carrier.mul",
             transform: identityTransform
-        },
+        }
+    };
 
-        "/knobs/2": {
+    var modulatorSpec = {
+        freq: {
             inputPath: "modulator.freq.value",
             transform: freqTransform
         },
-        "/knobs/3": {
+        mul: {
             inputPath: "modulator.mul",
             transform: freqTransform
         }
+    };
+
+    var synthValueMap = {
+        "/knobs/0": carrierSpec.freq,
+        "/fader1/out": carrierSpec.freq,
+
+        "/knobs/1": carrierSpec.mul,
+        "/fader2/out": carrierSpec.mul,
+
+        "/knobs/2": modulatorSpec.freq,
+        "/fader3/out": modulatorSpec.freq,
+
+        "/knobs/3": modulatorSpec.mul,
+        "/fader4/out": modulatorSpec.mul
     };
 
     var mapOSCToSynth = function (oscMessage, synth, valueMap) {
@@ -76,27 +92,59 @@
             portSelector.append(option);
         });
 
-        portSelector.change(function () {
+        var selectPort = function () {
             var selectedDevice = $("#portSelector").val();
             connectToSerialPort(selectedDevice);
-        })
+        };
+
+        portSelector.change(selectPort);
+
+        if (ports.length === 1) {
+            selectPort();
+        }
+
     });
 
     var connectToSerialPort = function (devicePath) {
         // Instantiate a new OSC Serial Port.
-        var port = new osc.chrome.SerialPort({
+        var serialPort = new osc.chrome.SerialPort({
             devicePath: "/dev/cu.usbmodem22131"
         });
 
         // Listen for the message event and map the OSC message to the synth.
-        port.on("message", function (oscMessage) {
+        serialPort.on("message", function (oscMessage) {
             mapOSCToSynth(oscMessage, synth, synthValueMap);
-            $("#message").text(JSON.stringify(oscMessage));
+            $("#message").text(fluid.prettyPrintJSON(oscMessage));
         });
 
         // Open the port.
-        port.open();
+        serialPort.open();
     };
+
+    // Also bind to a UDP socket.
+    var udpPort = new osc.chrome.UDPPort({
+        localAddress: "0.0.0.0",
+        localPort: 57121
+    });
+
+    udpPort.on("ready", function () {
+        $("#udpStatus").text("Listening for UDP on port " + udpPort.options.localPort);
+    });
+
+    // Map Lemur bundled messages to the synth.
+    udpPort.on("bundle", function (oscPacket) {
+        $("#message").text(fluid.prettyPrintJSON(oscPacket));
+
+        oscPacket.packets.forEach(function (oscMessage) {
+            mapOSCToSynth(oscMessage, synth, synthValueMap);
+        });
+    });
+
+    udpPort.on("error", function (err) {
+        throw new Error(err);
+    });
+
+    udpPort.open();
 
     // Start playing the synth.
     flock.init();
