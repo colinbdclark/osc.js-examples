@@ -28,13 +28,13 @@
 
     var connectToSerialPort = function (devicePath) {
         // Instantiate a new OSC Serial Port.
-        var serialPort = new osc.chrome.SerialPort({
+        var serialPort = new osc.SerialPort({
             devicePath: devicePath
         });
 
         // Listen for the message event and map the OSC message to the synth.
         serialPort.on("message", function (oscMessage) {
-            mapOSCToSynth(oscMessage, synth, synthValueMap);
+            example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
             $("#message").text(fluid.prettyPrintJSON(oscMessage));
         });
 
@@ -43,7 +43,7 @@
     };
 
     // Also bind to a UDP socket.
-    var udpPort = new osc.chrome.UDPPort({
+    var udpPort = new osc.UDPPort({
         localAddress: "0.0.0.0",
         localPort: 57121
     });
@@ -53,7 +53,7 @@
     });
 
     // Map Lemur bundled messages to the synth.
-    udpPort.on("osc", function (oscPacket) {
+    udpPort.on("bundle", function (oscPacket) {
         $("#message").text(fluid.prettyPrintJSON(oscPacket));
 
         oscPacket.packets.forEach(function (oscMessage) {
