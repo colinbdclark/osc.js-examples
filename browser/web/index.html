@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>osc.js Web Socket Demo</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" media="all" href="osc-view.css"></link>
+
+        <!--<script src="/bower_components/osc.js/dist/osc-browser.min.js"></script>-->
+        <script src="/bower_components/osc.js/src/osc.js"></script>
+        <script src="/bower_components/slip.js/src/slip.js"></script>
+        <script src="/bower_components/eventEmitter/EventEmitter.js"></script>
+        <script src="/bower_components/osc.js/src/osc-transports.js"></script>
+        <script src="/bower_components/osc.js/src/platforms/osc-browser.js"></script>
+
+        <script src="/bower_components/flocking/dist/flocking-all.min.js"></script>
+        <script src="/socket-synth.js"></script>
+    </head>
+
+    <body>
+        <h1>osc.js Web Socket Demo</h1>
+
+        <div id="messageArea">
+            <p id="messageLabel">OSC Message:</p>
+            <pre id="message"></pre>
+        </div>
+
+        <script>
+            var socketSynth = new example.SocketSynth();
+        </script>
+    </body>
+</html>

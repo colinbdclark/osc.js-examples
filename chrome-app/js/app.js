@@ -2,6 +2,11 @@
 
     "use strict";
 
+    var oscMessageListener = function (oscMessage) {
+        example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
+        $("#message").text(fluid.prettyPrintJSON(oscMessage));
+    };
+
     // Enumerate all the serial port devices and render them to the dropdown.
     chrome.serial.getDevices(function (ports) {
         var portSelector = $("#portSelector");
@@ -33,10 +38,7 @@
         });
 
         // Listen for the message event and map the OSC message to the synth.
-        serialPort.on("message", function (oscMessage) {
-            example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
-            $("#message").text(fluid.prettyPrintJSON(oscMessage));
-        });
+        serialPort.on("message", oscMessageListener);
 
         // Open the port.
         serialPort.open();
@@ -52,15 +54,7 @@
         $("#udpStatus").text("Listening for UDP on port " + udpPort.options.localPort);
     });
 
-    // Map Lemur bundled messages to the synth.
-    udpPort.on("bundle", function (oscPacket) {
-        $("#message").text(fluid.prettyPrintJSON(oscPacket));
-
-        oscPacket.packets.forEach(function (oscMessage) {
-            example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
-        });
-    });
-
+    udpPort.on("message", oscMessageListener);
     udpPort.on("error", function (err) {
         throw new Error(err);
     });

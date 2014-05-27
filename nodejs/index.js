@@ -25,10 +25,8 @@ udpPort.on("ready", function () {
     console.log("Listening for UDP on port " + udpPort.options.localPort);
 });
 
-udpPort.on("bundle", function (oscPacket) {
-    oscPacket.packets.forEach(function (oscMessage) {
-        example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
-    });
+udpPort.on("message", function (oscMessage) {
+    example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
 });
 
 udpPort.on("error", function (err) {

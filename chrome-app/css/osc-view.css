@@ -1,0 +1,29 @@
+#toolbar {
+    padding: 0.5em 0.5em 0.75em 0.5em;
+}
+
+#messageArea {
+    color: #fff;
+    background-color: #aaa;
+    border-radius: 10px;
+    padding-left: 0.75em;
+    padding-top: 0.1em;
+    height: 93%;
+    width: 98%;
+}
+
+#udpStatus {
+    float: right;
+    font-size: 75%;
+    font-style: italic;
+    padding-top: 0.5em;
+}
+
+#messageLabel {
+    font-weight: bold;
+}
+
+#message {
+    font-family: monospace;
+    font-size: 148%;
+}
