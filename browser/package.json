@@ -30,7 +30,7 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "git://github.com/colinbdclark/osc.js.git",
+        "osc": ">=1.0.1",
         "express": ">=4.3.1",
         "ws": ">=0.4.31"
     },

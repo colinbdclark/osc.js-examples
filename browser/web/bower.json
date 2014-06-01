@@ -4,7 +4,7 @@
     "main": "socket-synth.js",
     "ignore": [],
     "dependencies": {
-        "osc.js": "git://github.com/colinbdclark/osc.js.git",
+        "osc.js": ">=1.0.1",
         "flocking": "git://github.com/colinbdclark/Flocking.git"
     }
 }
