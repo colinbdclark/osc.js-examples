@@ -21,7 +21,7 @@ var appResources = __dirname + "/web",
 
 app.use("/", express.static(appResources));
 wss.on("connection", function (socket) {
-    console.log("connection");
+    console.log("A Web Socket connection has been established!");
     var socketPort = new osc.WebSocketPort({
         socket: socket
     });
