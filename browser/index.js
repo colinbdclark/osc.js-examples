@@ -38,5 +38,7 @@ wss.on("connection", function (socket) {
         console.log("bundle");
     });
 
-    var relay = new osc.PortRelay(udpPort, socketPort);
+    var relay = new osc.Relay(udpPort, socketPort, {
+        raw: true
+    });
 });
