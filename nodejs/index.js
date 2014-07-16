@@ -21,7 +21,7 @@ var udpPort = new osc.UDPPort({
     localPort: 57121
 });
 
-udpPort.on("ready", function () {
+udpPort.on("open", function () {
     console.log("Listening for UDP on port " + udpPort.options.localPort);
 });
 

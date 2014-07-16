@@ -4,7 +4,7 @@
     "main": "launch.js",
     "ignore": [],
     "dependencies": {
-        "osc.js": ">=1.0.1",
+        "osc.js": ">=1.0.2",
         "flocking": "git://github.com/colinbdclark/Flocking.git"
     }
 }

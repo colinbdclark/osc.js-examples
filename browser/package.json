@@ -30,7 +30,7 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": ">=1.0.1",
+        "osc": ">=1.0.2",
         "express": ">=4.3.1",
         "ws": ">=0.4.31"
     },
