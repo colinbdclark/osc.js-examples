@@ -2,6 +2,10 @@ var osc = require("osc"),
     flock = require("flocking"),
     example = require("../chrome-app/js/example-synth.js");
 
+/*******************
+ * OSC Over Serial *
+ *******************/
+
 // Instantiate a new OSC Serial Port.
 var serialPort = new osc.SerialPort({
     devicePath: process.argv[2] || "/dev/cu.usbmodem22131"
@@ -15,14 +19,41 @@ serialPort.on("message", function (oscMessage) {
 // Open the port.
 serialPort.open();
 
-// Also bind to a UDP socket.
+
+/****************
+ * OSC Over UDP *
+ ****************/
+
+var getIPAddresses = function () {
+    var os = require("os"),
+        interfaces = os.networkInterfaces(),
+        ipAddresses = [];
+
+    for (var deviceName in interfaces) {
+        var addresses = interfaces[deviceName];
+        for (var i = 0; i < addresses.length; i++) {
+            var addressInfo = addresses[i];
+            if (addressInfo.family === "IPv4" && !addressInfo.internal) {
+                ipAddresses.push(addressInfo.address);
+            }
+        }
+    }
+
+    return ipAddresses;
+};
+
 var udpPort = new osc.UDPPort({
     localAddress: "0.0.0.0",
     localPort: 57121
 });
 
-udpPort.on("open", function () {
-    console.log("Listening for UDP on port " + udpPort.options.localPort);
+udpPort.on("ready", function () {
+    var ipAddresses = getIPAddresses();
+
+    console.log("Listening for OSC over UDP.");
+    ipAddresses.forEach(function (address) {
+        console.log(" Host:", address + ", Port:", udpPort.options.localPort);
+    });
 });
 
 udpPort.on("message", function (oscMessage) {
