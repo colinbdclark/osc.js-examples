@@ -1,0 +1,9 @@
+{
+    "name": "osc.js-webUDP-app",
+    "version": "1.0.0",
+    "ignore": [],
+    "dependencies": {
+        "osc.js": ">=1.0.4",
+        "jquery": "~1.10.2"
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>osc.js Web Socket Demo</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" media="all" href="osc-view.css"></link>
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/osc.js/dist/osc-browser.min.js"></script>
+        <script type="text/javascript">
+
+            var port = new osc.WebSocketPort({
+                url: "ws://localhost:8081"
+            });
+
+            port.on("message", function (oscMessage) {
+                $("#message").text(JSON.stringify(oscMessage, undefined, 2));
+                console.log("message", oscMessage);
+            });
+
+            port.open();
+
+            var sayHello = function () {
+                port.send({
+                    address: "/hello",
+                    args: ["world"]
+                });
+            };
+
+        </script>
+    </head>
+
+    <body>
+        <h1>osc.js Web Socket Demo</h1>
+
+        <div id="messageArea">
+            <p id="messageLabel">OSC Message:</p>
+            <pre id="message"></pre>
+        </div>
+
+        <button onclick="sayHello()">Send OSC message</button>
+    </body>
+</html>
