@@ -1,16 +1,19 @@
-## UDP <-> web browser example
+# Bi-directional UDP <-> web browser example
 
-This example opens a web socket in a web page that communicate to the index.js file.
+This example opens a Web Socket in a web page that communicates with a Node.js server.
+The server is responsible for relaying OSC messages bidirectionally between the web page and set of
+example Python scripts.
 
-#### To Install:
+## Installation
 
-1. In *UDP-browser* folder, use command line and run <pre>npm install</pre>
-2. In *web* folder, use command line and run <pre>bower install</pre>
-3. If you want to use the supplied Python test files for the UDP end; then use pip to install pyosc <pre>sudo pip install pyosc --pre</pre>
+From the command line:
+1. Run <pre>npm install</pre>
+2. In the <pre>web</pre> folder, run <pre>bower install</pre>
+3. Use <pre>pip</pre> to install pyosc: <pre>sudo pip install pyosc --pre</pre>
 
-#### To Test:
+## Running the Demo
 
-1. In *UDP-browser* folder, Use command line and run <pre>node index.js</pre>
-2. In *web* folder, open index.html in web browser, notice that the terminal window will state that you have connected.
-3. For UDP->browser, in *UDP-browser* folder, use command line in a new terminal window and run <pre>python testSend.py</pre> An OSC message should appear in the web browser window.
-4. For browser->UDP, in *UDP-browser* folder, use command line and run <pre>python testReceive.py</pre> This will start a UDP server. Then in the browser, click the 'Send OSC message' button. An OSC message should appear in the terminal window runing testReceive.py.
+1. In the <pre>udp-browser</pre> folder, start the Node.js server: <pre>node index.js</pre>
+2. In <pre>web</pre> folder, open index.html in a web browser; a log will printed to the terminal when you have connected
+3. To send an OSC message via UDP to the browser, run <pre>python testSend.py</pre> in a new terminal window; an OSC message should appear in the web browser window
+4. To send an OSC message from the browser to the UDP socket, run <pre>python testReceive.py</pre>. This will start a Python-based UDP OSC server. Then in the browser, click the 'Send OSC message' button. An OSC message should appear in the terminal window runing testReceive.py.

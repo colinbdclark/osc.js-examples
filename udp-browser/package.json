@@ -1,14 +1,15 @@
 {
-    "name": "osc.js-examples-web",
+    "name": "osc.js-examples-udp-ws",
     "main": "index.js",
-    "version": "0.1.0",
-    "description": "Example of how to bi-directionally communicate web browser to UDP.",
+    "version": "0.1.1",
+    "description": "Example of how to bi-directionally send OSC messages between a web browser and a UDP socket.",
     "author": "Colin Clark",
     "homepage": "http://flockingjs.org/",
     "repository": {
         "type": "git",
         "url": "git://github.com/colinbdclark/osc.js-examples.git"
     },
+    "readmeFilename": "README.md",
     "bugs": "https://github.com/colinbdclark/osc.js/issues",
     "licenses": [
         {
@@ -27,8 +28,7 @@
     "readmeFilename": "README.md",
     "dependencies": {
         "osc": ">=1.0.4",
-        "express": ">=4.3.1",
-        "ws": ">=0.4.31"
+        "ws": "0.7.1"
     },
     "engines": {
         "node": "0.10.x"

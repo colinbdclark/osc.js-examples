@@ -2,8 +2,6 @@
 //  Bi-Directional OSC messaging Websocket <-> UDP
 //--------------------------------------------------
 var osc = require("osc"),
-    http = require("http"),
-    express = require("express"),
     WebSocket = require("ws");
 
 var getIPAddresses = function () {
@@ -44,11 +42,9 @@ udp.on("ready", function () {
 
 udp.open();
 
-var app = express(),
-    server = app.listen(8081),
-    wss = new WebSocket.Server({
-        server: server
-    });
+var wss = new WebSocket.Server({
+    port: 8081
+});
 
 wss.on("connection", function (socket) {
     console.log("A Web Socket connection has been established!");
