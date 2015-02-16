@@ -9,6 +9,7 @@
         "type": "git",
         "url": "git://github.com/colinbdclark/osc.js-examples.git"
     },
+    "readmeFilename": "README.md",
     "bugs": "https://github.com/colinbdclark/osc.js/issues",
     "licenses": [
         {
@@ -31,8 +32,8 @@
     "readmeFilename": "README.md",
     "dependencies": {
         "osc": ">=1.0.3",
-        "express": ">=4.3.1",
-        "ws": ">=0.4.31"
+        "express": "4.3.1",
+        "ws": "0.7.1"
     },
     "engines": {
         "node": "0.10.x"
