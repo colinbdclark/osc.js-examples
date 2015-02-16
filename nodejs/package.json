@@ -9,6 +9,7 @@
         "type": "git",
         "url": "git://github.com/colinbdclark/osc.js-examples.git"
     },
+    "readmeFilename": "README.md",
     "bugs": "https://github.com/colinbdclark/osc.js/issues",
     "licenses": [
         {

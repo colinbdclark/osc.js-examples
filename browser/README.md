@@ -1,9 +1,9 @@
 # UDP -> Web Socket Example
 
 This example illustrates a Node.js server that will relay OSC messages sent via
-a UDP socket to a web page using a Web Socket connection.
+a UDP socket (listening on port 57121) to a web page using a Web Socket connection.
 
-By default, it is configured to handle message from Lemur's AB Faderlab project.
+By default, it is configured to handle OSC messages via UDP from Lemur's AB Faderlab project.
 It maps four parameters of a simple Flocking-based FM synthesizer to the first four
 faders in the Lemur project. Here is the mapping:
 
@@ -34,6 +34,11 @@ faders in the Lemur project. Here is the mapping:
         <td>modulator amplitude</td>
     <tr>
 </table>
+
+## Installation
+
+1. Run <code>npm install</code> in the terminal to install all required Node dependencies
+2. In the <code>web</code> directory, run <code>bower install</code</code> to install all web dependencies
 
 ## Running the Example
 
