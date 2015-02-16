@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "ignore": [],
     "dependencies": {
-        "osc.js": ">=1.0.4",
+        "osc.js": ">=1.1.0",
         "jquery": "~1.10.2"
     }
 }
