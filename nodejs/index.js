@@ -67,5 +67,4 @@ udpPort.on("error", function (err) {
 udpPort.open();
 
 // Start playing the synth.
-flock.init();
 example.synth.play();
