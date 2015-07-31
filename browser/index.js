@@ -32,6 +32,7 @@ udpPort.on("ready", function () {
     ipAddresses.forEach(function (address) {
         console.log(" Host:", address + ", Port:", udpPort.options.localPort);
     });
+    console.log("To start the demo, go to http://localhost:8081 in your web browser.");
 });
 
 udpPort.open();

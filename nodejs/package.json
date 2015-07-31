@@ -1,7 +1,7 @@
 {
     "name": "osc.js-examples-node",
     "main": "index.js",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Example of how to use osc.js in Node.js.",
     "author": "Colin Clark",
     "homepage": "http://flockingjs.org/",
@@ -22,10 +22,10 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": ">=1.1.0",
+        "osc": "1.1.4",
         "flocking": "git://github.com/colinbdclark/Flocking.git"
     },
     "engines": {
-        "node": "0.10.x"
+        "node": ">=0.10.x"
     }
 }

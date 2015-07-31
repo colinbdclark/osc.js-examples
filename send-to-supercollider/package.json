@@ -1,7 +1,7 @@
 {
     "name": "send-to-supercollider",
     "main": "index.js",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Example of how to send messages to sclang from a Node.js app.",
     "author": "Colin Clark",
     "homepage": "http://flockingjs.org/",
@@ -22,9 +22,9 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": ">=1.1.0"
+        "osc": "1.1.4"
     },
     "engines": {
-        "node": "0.10.x"
+        "node": ">=0.10.x"
     }
 }
