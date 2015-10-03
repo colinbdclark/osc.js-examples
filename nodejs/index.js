@@ -1,4 +1,4 @@
-var osc = require("osc"),
+var osc = require("osc-serialport"),
     flock = require("flocking"),
     example = require("../chrome-app/js/example-synth.js");
 

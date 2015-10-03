@@ -3,6 +3,8 @@
 This example illustrates a Node.js application that accepts OSC messages
 from the serial port and a UDP socket (listening on port 57121).
 
+Note that this example requires the <code>osc-serialport</code> module.
+
 ## OSC Messages Over UDP
 By default, this example is configured to handle OSC messages via from Lemur's AB Faderlab project.
 It maps four parameters of a simple Flocking-based FM synthesizer to the first four
