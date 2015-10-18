@@ -18,10 +18,10 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "1.3.0",
-        "ws": "0.7.1"
+        "osc": "2.0.0",
+        "ws": "0.8.0"
     },
     "engines": {
-        "node": "0.10.x"
+        "node": ">=0.10.x"
     }
 }

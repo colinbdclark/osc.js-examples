@@ -22,8 +22,8 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "1.3.0",
-        "flocking": "git://github.com/colinbdclark/Flocking.git"
+        "osc": "2.0.0",
+        "flocking": "0.1.4"
     },
     "engines": {
         "node": ">=0.10.x"
