@@ -22,9 +22,6 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "2.0.0"
-    },
-    "engines": {
-        "node": ">=0.10.x"
+        "osc": "colinbdclark/osc.js#gh-54"
     }
 }

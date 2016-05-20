@@ -1,9 +1,9 @@
 {
-    "name": "osc.js-webUDP-app",
+    "name": "osc.js-webudp-app",
     "version": "1.0.0",
     "ignore": [],
     "dependencies": {
-        "osc.js": "2.0.0",
-        "jquery": "~1.10.2"
+        "osc.js": "colinbdclark/osc.js#gh-54",
+        "jquery": "2.2.3"
     }
 }
