@@ -4,7 +4,7 @@
     "main": "socket-synth.js",
     "ignore": [],
     "dependencies": {
-        "osc.js": "colinbdclark/osc.js#gh-54",
-        "flocking": "0.1.4"
+        "osc.js": "colinbdclark/osc.js#gh-58",
+        "flocking": "0.1.6"
     }
 }

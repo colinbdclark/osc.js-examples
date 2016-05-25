@@ -22,6 +22,6 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "colinbdclark/osc.js#gh-54"
+        "osc": "colinbdclark/osc.js#gh-58"
     }
 }
