@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "ignore": [],
     "dependencies": {
-        "osc.js": "colinbdclark/osc.js#gh-54",
+        "osc.js": "2.1.0",
         "jquery": "2.2.3"
     }
 }
