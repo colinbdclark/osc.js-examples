@@ -36,6 +36,8 @@ faders in the Lemur project. Here is the mapping:
     <tr>
 </table>
 
+If you don't have a copy of Lemur, you can use the SuperCollider test client created by [Jascha Narveson](https://github.com/jaschanarveson), which is located in the [utils](../utils/supercollider-lemur-faderlab-style-client.scd) directory.
+
 ## OSC Messages Over Serial
 This example also listens for OSC messages over the serial port (which can be specified as the first argument to Node.js when starting the server). Here is the mapping:
 
