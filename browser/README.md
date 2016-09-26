@@ -35,6 +35,8 @@ faders in the Lemur project. Here is the mapping:
     <tr>
 </table>
 
+If you don't have a copy of Lemur, you can use the SuperCollider test client created by [Jascha Narveson](https://github.com/jaschanarveson), which is located in the [utils](../utils/supercollider-lemur-faderlab-style-client.scd) directory.
+
 ## Installation
 
 1. Run <code>npm install</code> in the terminal to install all required Node dependencies
