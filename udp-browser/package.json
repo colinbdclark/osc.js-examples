@@ -1,8 +1,8 @@
 {
-    "name": "osc.js-examples-node",
+    "name": "osc.js-examples-udp-ws",
     "main": "index.js",
     "version": "0.1.1",
-    "description": "Example of how to use osc.js in Node.js.",
+    "description": "Example of how to bi-directionally send OSC messages between a web browser and a UDP socket.",
     "author": "Colin Clark",
     "homepage": "http://flockingjs.org/",
     "repository": {
@@ -14,15 +14,11 @@
     "license": "(MIT OR GPL-2.0)",
     "keywords": [
         "Open Sound Control",
-        "OSC",
-        "sound",
-        "audio",
-        "music",
-        "Flocking"
+        "OSC"
     ],
     "readmeFilename": "README.md",
     "dependencies": {
         "osc": "2.1.0",
-        "flocking": "0.1.6"
+        "ws": "1.1.0"
     }
 }

@@ -8,7 +8,8 @@
     "version": "1",
     "manifest_version": 2,
     "permissions": [
-        "serial"
+        "serial",
+        "system.network"
     ],
     "minimum_chrome_version": "23",
     "icons": {},

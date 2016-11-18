@@ -5,6 +5,8 @@ var flock = flock || require("../../nodejs/node_modules/flocking"),
 
     "use strict";
 
+    flock.init();
+
     // A nice little FM synth.
     // Incoming OSC messages control the frequency and amplitude
     // of both the modulator and the carrier oscillators.

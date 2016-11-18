@@ -1,8 +1,8 @@
 {
-    "name": "osc.js-examples-node",
+    "name": "send-to-supercollider",
     "main": "index.js",
     "version": "0.1.1",
-    "description": "Example of how to use osc.js in Node.js.",
+    "description": "Example of how to send messages to sclang from a Node.js app.",
     "author": "Colin Clark",
     "homepage": "http://flockingjs.org/",
     "repository": {
@@ -22,7 +22,6 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "2.1.0",
-        "flocking": "0.1.6"
+        "osc": "2.1.0"
     }
 }

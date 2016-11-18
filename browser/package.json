@@ -1,7 +1,7 @@
 {
     "name": "osc.js-examples-web",
     "main": "index.js",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Example of how to use osc.js in a web browser.",
     "author": "Colin Clark",
     "homepage": "http://flockingjs.org/",
@@ -9,17 +9,9 @@
         "type": "git",
         "url": "git://github.com/colinbdclark/osc.js-examples.git"
     },
+    "readmeFilename": "README.md",
     "bugs": "https://github.com/colinbdclark/osc.js/issues",
-    "licenses": [
-        {
-          "type": "MIT",
-          "url": "http://opensource.org/licenses/MIT"
-        },
-        {
-          "type": "GPL",
-          "url": "http://opensource.org/licenses/GPL-3.0"
-        }
-    ],
+    "license": "(MIT OR GPL-2.0)",
     "keywords": [
         "Open Sound Control",
         "OSC",
@@ -30,11 +22,8 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": ">=1.0.1",
-        "express": ">=4.3.1",
-        "ws": ">=0.4.31"
-    },
-    "engines": {
-        "node": "0.10.x"
+        "osc": "2.1.0",
+        "express": "4.13.4",
+        "ws": "1.1.0"
     }
 }

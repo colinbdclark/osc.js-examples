@@ -14,11 +14,9 @@
 
 #udpStatus {
     float: right;
-}
-
-#udpStatus div span{
-    font-family: monospace;
-    font-size: 110%
+    font-size: 75%;
+    font-style: italic;
+    padding-top: 0.5em;
 }
 
 #messageLabel {

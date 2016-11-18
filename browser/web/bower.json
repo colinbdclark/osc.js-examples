@@ -1,10 +1,10 @@
 {
     "name": "osc.js-web-app",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "socket-synth.js",
     "ignore": [],
     "dependencies": {
-        "osc.js": ">=1.0.1",
-        "flocking": "git://github.com/colinbdclark/Flocking.git"
+        "osc.js": "2.1.0",
+        "flocking": "0.1.6"
     }
 }
