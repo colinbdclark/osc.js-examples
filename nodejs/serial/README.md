@@ -1,6 +1,8 @@
+#Node.js Serial Example 
+
 A simple implementation to illustrate the node.js binding to the serial port. 
 
-1. Load the arduino sketch onto your arduino or teensy. 
+1. Load the arduino sketch onto your arduino or teensy. Find it in the [utils](../utils/arduino/ArduinoOSCSender/) folder.
 
 2. Finding the serial port listing on your system
 
