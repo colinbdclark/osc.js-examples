@@ -1,0 +1,39 @@
+{
+    "name": "osc.js-examples-node",
+    "main": "index.js",
+    "version": "0.1.0",
+    "description": "Example of how to use osc.js in Node.js using Serial over IP (SLIP).",
+    "author": "Colin Clark",
+    "homepage": "http://flockingjs.org/",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/colinbdclark/osc.js-examples.git"
+    },
+    "bugs": "https://github.com/colinbdclark/osc.js/issues",
+    "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://opensource.org/licenses/MIT"
+        },
+        {
+          "type": "GPL",
+          "url": "http://opensource.org/licenses/GPL-3.0"
+        }
+    ],
+    "keywords": [
+        "Open Sound Control",
+        "OSC",
+        "sound",
+        "audio",
+        "music",
+        "Flocking"
+    ],
+    "readmeFilename": "README.md",
+    "dependencies": {
+        "osc": ">=1.0.1",
+        "flocking": "git://github.com/colinbdclark/Flocking.git"
+    },
+    "engines": {
+        "node": "0.10.x"
+    }
+}
