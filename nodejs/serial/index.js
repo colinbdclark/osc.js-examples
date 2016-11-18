@@ -14,5 +14,4 @@ serialPort.on("message", function (oscMessage) {
 // Open the port.
 serialPort.open();
 
-
 process.stdin.resume();
