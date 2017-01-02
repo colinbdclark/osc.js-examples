@@ -10,10 +10,10 @@
     "homepage": "http://github.com/colinbdclark/osc.js-examples",
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "colinbdclark/osc.js#gh-65",
-        "electron": "1.4.3",
-        "jquery": "2.2.0",
-        "infusion": "2.0.0-dev.20161002T002156Z.a2802df",
+        "osc": "2.2.0",
+        "electron": "1.4.13",
+        "jquery": "3.1.1",
+        "infusion": "2.0.0",
         "infusion-electron": "colinbdclark/infusion-electron#new-electron-api"
     },
     "scripts": {
