@@ -4,7 +4,7 @@
     "main": "launch.js",
     "ignore": [],
     "dependencies": {
-        "osc.js": "2.1.0",
-        "flocking": "0.1.6"
+        "osc.js": "2.2.0",
+        "flocking": "colinbdclark/flocking#master"
     }
 }

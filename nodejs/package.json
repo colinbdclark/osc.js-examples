@@ -22,7 +22,7 @@
     ],
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "2.1.0",
-        "flocking": "0.1.6"
+        "osc": "2.2.0",
+        "flocking": "colinbdclark/flocking#master"
     }
 }
