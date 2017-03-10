@@ -11,10 +11,10 @@
     "readmeFilename": "README.md",
     "dependencies": {
         "osc": "2.2.0",
-        "electron": "1.4.13",
+        "electron": "1.4.14",
         "jquery": "3.1.1",
         "infusion": "2.0.0",
-        "infusion-electron": "colinbdclark/infusion-electron#new-electron-api"
+        "infusion-electron": "colinbdclark/infusion-electron#5226fbd49cb4da50be519cd897f72869a2067413"
     },
     "scripts": {
         "electron-app": "node_modules/.bin/electron ."
