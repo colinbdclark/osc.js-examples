@@ -1,10 +1,9 @@
 /*
 This example supposed two machines on a local network with the network names computerA and computerB.
 
-The main thing about sending over a LAN is that you can't use 127.0.0.1 or localhost as your local address - you must use your LAN address.
+The main thing about sending over a LAN is that you can't use 127.0.0.1 or "localhost" as your local address - 
+you must use your LAN address.
 */
-
-
 
 //Set up computerA to send to computerB...
 
