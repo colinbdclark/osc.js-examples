@@ -20,9 +20,8 @@
         "music",
         "Flocking"
     ],
-    "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "2.2.0",
+        "osc": "../../osc.js",
         "flocking": "colinbdclark/flocking#master"
     }
 }

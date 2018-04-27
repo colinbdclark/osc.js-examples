@@ -20,8 +20,7 @@
         "music",
         "Flocking"
     ],
-    "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "2.2.0"
+        "osc": "2.2.1"
     }
 }

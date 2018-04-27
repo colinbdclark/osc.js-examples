@@ -40,7 +40,7 @@ If you don't have a copy of Lemur, you can use the SuperCollider test client cre
 ## Installation
 
 1. Run <code>npm install</code> in the terminal to install all required Node dependencies
-2. In the <code>web</code> directory, run <code>bower install</code> to install all web dependencies
+2. In the <code>web</code> directory, run <code>npm install</code> to install all web dependencies
 
 ## Running the Example
 

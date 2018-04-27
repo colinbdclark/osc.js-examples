@@ -71,7 +71,7 @@ This example also listens for OSC messages over the serial port, which can be se
 
 ## Installation
 
-1. Run <code>bower install</code> in the Terminal
+1. Run <code>npm install</code> in the Terminal
 2. Open Chrome's _Extensions_ window (_More Tools > Extensions_)
 3. Enable the _Developer Mode_ checkbox
 4. Choose _Load unpacked extension..._ and navigate to the <code>chrome-app</code> directory
