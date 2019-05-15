@@ -38,6 +38,6 @@ fluid.defaults("oscjsExamples.electron.serialPortLogger", {
 
 oscjsExamples.electron.createSerialPort = function () {
     return new osc.SerialPort({
-        devicePath: process.argv[2] || "/dev/cu.usbmodem22131"
+        devicePath: process.argv[2] || "/dev/tty.usbmodem221361"
     });
 };

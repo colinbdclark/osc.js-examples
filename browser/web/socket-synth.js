@@ -44,7 +44,7 @@ var example = example || {};
         this.oscPort.socket.onmessage = function (e) {
             console.log("message", e);
         };
-        
+
         this.valueMap = {
             "/knobs/0": carrierSpec.freq,
             "/fader1/out": carrierSpec.freq,
@@ -58,6 +58,12 @@ var example = example || {};
             "/knobs/3": modulatorSpec.mul,
             "/fader4/out": modulatorSpec.mul
         };
+    };
+
+    example.SocketSynth.prototype.createSynth = function () {
+        if (this.synth) {
+            return;
+        }
 
         this.synth = flock.synth({
             synthDef: {
@@ -81,12 +87,15 @@ var example = example || {};
                 mul: 0.3
             }
         });
-
-
     };
 
     example.SocketSynth.prototype.listen = function () {
-        this.oscPort.on("open", this.play.bind(this));
+        var that = this;
+        $("button").click(function () {
+            that.createSynth();
+            that.play();
+        });
+
         this.oscPort.on("message", this.mapMessage.bind(this));
         this.oscPort.on("message", function (msg) {
             console.log("message", msg);
@@ -95,10 +104,6 @@ var example = example || {};
     };
 
     example.SocketSynth.prototype.play = function () {
-        if (!flock.enviro.shared) {
-            flock.init();
-        }
-
         this.synth.play();
     };
 
