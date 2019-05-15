@@ -27,3 +27,13 @@
     font-family: monospace;
     font-size: 148%;
 }
+
+button {
+    font-size: 150%;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.4em;
+    margin-bottom: 1em;
+    background-color: #000;
+    color: #fff;
+}

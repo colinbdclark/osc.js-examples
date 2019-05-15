@@ -21,7 +21,6 @@
         "Flocking"
     ],
     "dependencies": {
-        "osc": "../../osc.js",
-        "flocking": "colinbdclark/flocking#master"
+        "osc": "2.3.0"
     }
 }

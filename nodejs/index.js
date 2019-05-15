@@ -1,6 +1,4 @@
-var osc = require("osc"),
-    flock = require("flocking"),
-    example = require("../chrome-app/js/example-synth.js");
+var osc = require("osc");
 
 /*******************
  * OSC Over Serial *
@@ -8,12 +6,11 @@ var osc = require("osc"),
 
 // Instantiate a new OSC Serial Port.
 var serialPort = new osc.SerialPort({
-    devicePath: process.argv[2] || "/dev/cu.usbmodem22131"
+    devicePath: process.argv[2] || "/dev/tty.usbmodem221361"
 });
 
-// Listen for the message event and map the OSC message to the synth.
 serialPort.on("message", function (oscMessage) {
-    example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
+    console.log(oscMessage);
 });
 
 // Open the port.
@@ -57,7 +54,7 @@ udpPort.on("ready", function () {
 });
 
 udpPort.on("message", function (oscMessage) {
-    example.mapOSCToSynth(oscMessage, example.synth, example.synthValueMap);
+    console.log(oscMessage);
 });
 
 udpPort.on("error", function (err) {
@@ -65,6 +62,3 @@ udpPort.on("error", function (err) {
 });
 
 udpPort.open();
-
-// Start playing the synth.
-example.synth.play();
