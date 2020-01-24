@@ -21,6 +21,6 @@
         "Flocking"
     ],
     "dependencies": {
-        "osc": "2.3.0"
+        "osc": "2.4.0"
     }
 }

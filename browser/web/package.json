@@ -1,7 +1,7 @@
 {
-    "name": "osc.js-chrome-app",
+    "name": "osc.js-web-app",
     "version": "1.0.1",
-    "main": "launch.js",
+    "main": "socket-synth.js",
     "ignore": [],
     "dependencies": {
         "osc": "2.4.0",

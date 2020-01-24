@@ -10,11 +10,11 @@
     "homepage": "http://github.com/colinbdclark/osc.js-examples",
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "2.3.0",
-        "electron": "5.0.1",
+        "osc": "2.4.0",
+        "electron": "7.1.10",
         "jquery": "3.4.1",
-        "infusion": "3.0.0-dev.20190328T144119Z.ec44dbfab",
-        "infusion-electron": "0.6.0"
+        "infusion": "3.0.0-dev.20190905T163833Z.b024bff87",
+        "infusion-electron": "0.7.0"
     },
     "scripts": {
         "electron-app": "node_modules/.bin/electron ."
