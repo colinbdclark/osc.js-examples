@@ -12,7 +12,7 @@
     "dependencies": {
         "osc": "2.4.0",
         "electron": "7.1.10",
-        "jquery": "3.4.1",
+        "jquery": "3.5.0",
         "infusion": "3.0.0-dev.20190905T163833Z.b024bff87",
         "infusion-electron": "0.7.0"
     },
