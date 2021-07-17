@@ -19,8 +19,21 @@ fluid.defaults("oscjsExamples.electron.app", {
         serialPortLogger: {
             type: "oscjsExamples.electron.serialPortLogger"
         }
+    },
+
+    listeners: {
+        "onCreate.setRendererProcessReuse": {
+            funcName: "oscjsExamples.electron.app.setRendererProcessReuse",
+            args: ["{that}.app"]
+        }
     }
 });
+
+// TODO: Add support for this option in infusion-electron
+oscjsExamples.electron.app.setRendererProcessReuse = function (app) {
+    app.allowRendererProcessReuse = false;
+};
+
 
 fluid.defaults("oscjsExamples.electron.window", {
     gradeNames: "electron.browserWindow",
@@ -28,7 +41,11 @@ fluid.defaults("oscjsExamples.electron.window", {
     windowOptions: {
         title: "osc.js Electron serial port example",
         x: 0,
-        y: 0
+        y: 0,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
     },
 
     url: "html/main-window.html",
