@@ -28,15 +28,21 @@ fluid.defaults("oscjsExamples.electron.window", {
     windowOptions: {
         title: "osc.js Electron serial port example",
         x: 0,
-        y: 0
+        y: 0,
+        width: 640,
+        height: 480
     },
 
-    url: "html/main-window.html",
 
     model: {
-        dimensions: {
-            width: 640,
-            height: 480
+        url: {
+            expander: {
+                funcName: "fluid.stringTemplate",
+                args: [
+                    "%url/src/client/html/main-window.html",
+                    "{app}.env.appRoot"
+                ]
+            }
         }
     }
 });

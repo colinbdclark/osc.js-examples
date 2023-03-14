@@ -1,7 +1,7 @@
 {
     "name": "osc-electron-example",
     "main": "src/main.js",
-    "description": "An example of how to use osc.js with Atom Electron.",
+    "description": "An example of how to use osc.js with Electron.",
     "version": "1.0.0",
     "author": "Colin Clark",
     "license": "BSD-3-Clause",
@@ -10,13 +10,12 @@
     "homepage": "http://github.com/colinbdclark/osc.js-examples",
     "readmeFilename": "README.md",
     "dependencies": {
-        "osc": "2.4.0",
-        "electron": "7.1.10",
-        "jquery": "3.4.1",
-        "infusion": "3.0.0-dev.20190905T163833Z.b024bff87",
-        "infusion-electron": "0.7.0"
+        "osc": "2.4.4",
+        "electron": "23.1.3",
+        "infusion": "4.2.0",
+        "infusion-electron": "0.10.0"
     },
     "scripts": {
-        "electron-app": "node_modules/.bin/electron ."
+        "app": "npx electron ."
     }
 }
