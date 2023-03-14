@@ -22,6 +22,7 @@ fluid.defaults("oscjsExamples.electron.app", {
     }
 });
 
+
 fluid.defaults("oscjsExamples.electron.window", {
     gradeNames: "electron.browserWindow",
 
