@@ -21,7 +21,7 @@
         "Flocking"
     ],
     "dependencies": {
-        "osc": "2.4.2",
+        "osc": "2.4.4",
         "express": "4.17.1",
         "ws": "7.5.3"
     }
